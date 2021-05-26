@@ -5,6 +5,27 @@
 		"factoryName": {
 			"value": "ADFTest145534"
 		},
+		"AmazonS3Linkedservice_secretAccessKey": {
+			"value": ""
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"Gen2_AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"gen2_AzureDataLakeStorage_accountKey": {
+			"value": ""
+		},
+		"AmazonS3Linkedservice_properties_typeProperties_accessKeyId": {
+			"value": "AKIAY6IAGZPRABUG6WHY"
+		},
+		"Gen2_AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://adlsgen21212.dfs.core.windows.net"
+		},
+		"gen2_AzureDataLakeStorage_properties_typeProperties_url": {
+			"value": "https://adlsgen21212.dfs.core.windows.net"
+		},
 		"containerUri": {
 			"value": ""
 		},

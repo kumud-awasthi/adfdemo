@@ -6,34 +6,6 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "ADFTest145534"
-		},
-		"AmazonS3Linkedservice_secretAccessKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'secretAccessKey' of 'AmazonS3Linkedservice'"
-		},
-		"AzureBlobStorage1_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
-		},
-		"Gen2_AzureDataLakeStorage1_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'Gen2_AzureDataLakeStorage1'"
-		},
-		"gen2_AzureDataLakeStorage_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'gen2_AzureDataLakeStorage'"
-		},
-		"AmazonS3Linkedservice_properties_typeProperties_accessKeyId": {
-			"type": "string",
-			"defaultValue": "AKIAY6IAGZPRABUG6WHY"
-		},
-		"Gen2_AzureDataLakeStorage1_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsgen21212.dfs.core.windows.net"
-		},
-		"gen2_AzureDataLakeStorage_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsgen21212.dfs.core.windows.net"
 		}
 	},
 	"variables": {
@@ -86,15 +58,13 @@
 						"inputs": [
 							{
 								"referenceName": "inputdataset",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "outputdataset",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					}
@@ -105,26 +75,6 @@
 				"[concat(variables('factoryId'), '/datasets/inputdataset')]",
 				"[concat(variables('factoryId'), '/datasets/outputdataset')]"
 			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Wait1",
-						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"waitTimeInSeconds": 1
-						}
-					}
-				],
-				"annotations": []
-			},
-			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/pipeline2')]",
@@ -180,15 +130,13 @@
 						"inputs": [
 							{
 								"referenceName": "inputdataset",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "outputdataset",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					}
@@ -246,9 +194,7 @@
 					}
 				]
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/inputs3dataset')]",
@@ -331,25 +277,12 @@
 				"type": "AmazonS3",
 				"typeProperties": {
 					"serviceUrl": "",
-					"accessKeyId": "[parameters('AmazonS3Linkedservice_properties_typeProperties_accessKeyId')]",
+					"accessKeyId": "AKIAY6IAGZPRABUG6WHY",
 					"secretAccessKey": {
 						"type": "SecureString",
-						"value": "[parameters('AmazonS3Linkedservice_secretAccessKey')]"
+						"value": "**********"
 					},
 					"authenticationType": "AccessKey"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('AzureBlobStorage1_connectionString')]"
 				}
 			},
 			"dependsOn": []
@@ -362,10 +295,10 @@
 				"annotations": [],
 				"type": "AzureBlobFS",
 				"typeProperties": {
-					"url": "[parameters('Gen2_AzureDataLakeStorage1_properties_typeProperties_url')]",
+					"url": "https://adlsgen21212.dfs.core.windows.net",
 					"accountKey": {
 						"type": "SecureString",
-						"value": "[parameters('Gen2_AzureDataLakeStorage1_accountKey')]"
+						"value": "**********"
 					}
 				}
 			},
@@ -379,10 +312,10 @@
 				"annotations": [],
 				"type": "AzureBlobFS",
 				"typeProperties": {
-					"url": "[parameters('gen2_AzureDataLakeStorage_properties_typeProperties_url')]",
+					"url": "https://adlsgen21212.dfs.core.windows.net",
 					"accountKey": {
 						"type": "SecureString",
-						"value": "[parameters('gen2_AzureDataLakeStorage_accountKey')]"
+						"value": "**********"
 					}
 				}
 			},
