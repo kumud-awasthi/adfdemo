@@ -1,0 +1,9 @@
+{
+	"name": "ADFTestcxdp",
+	"location": "canadacentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "bc7503e1-a6c5-4eac-a782-6ccb5391d79e",
+		"tenantId": "cf00b63d-5524-4988-aa3d-cc1c739de1f0"
+	}
+}
